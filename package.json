@@ -1,0 +1,14 @@
+{
+  "name": "streamguard-playback-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A TypeScript playback-session API and interactive reliability lab.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types src/server.ts",
+    "dev": "node --watch --experimental-strip-types src/server.ts"
+  }
+}
