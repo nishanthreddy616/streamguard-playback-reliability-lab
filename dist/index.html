@@ -3,73 +3,254 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111110">
+  <meta name="theme-color" content="#131516">
   <meta name="description" content="An interactive playback reliability and security engineering portfolio project.">
-  <title>StreamGuard: Playback Reliability Lab</title>
-  <style>
-    :root{--bg:#0b0d16;--panel:#111521;--panel2:#151a28;--line:#252b3c;--muted:#8991a8;--text:#f3f4f9;--accent:#c7ff63;--pink:#d992ff;--red:#ff7385;--blue:#75d8ff;--amber:#ffc56e;--green:#8ce3b1;--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#292446 0,transparent 33%),var(--bg);color:var(--text);font:14px/1.55 var(--sans)}button,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.app{min-height:100vh}.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 30px;border-bottom:1px solid #ffffff12;background:#0b0d16d9;position:sticky;top:0;z-index:5;backdrop-filter:blur(16px)}.brand{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.11em}.brand-mark{width:32px;height:32px;display:grid;place-items:center;border:1px solid #c7ff6366;border-radius:10px;color:var(--accent);font-size:17px;box-shadow:inset 0 0 20px #c7ff6314}.top-right{display:flex;align-items:center;gap:13px}.portfolio-tag,.mode-pill{font-size:11px;color:#b8bdd0;border:1px solid #ffffff1b;padding:6px 10px;border-radius:999px;letter-spacing:.03em}.dot{display:inline-block;width:7px;height:7px;border-radius:100%;background:var(--green);margin-right:7px;box-shadow:0 0 10px #8ce3b188}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1600px;margin:0 auto}.sidebar{border-right:1px solid #ffffff10;padding:28px 16px;position:sticky;top:68px;height:calc(100vh - 68px)}.side-label{font:10px var(--mono);color:#697189;letter-spacing:.14em;text-transform:uppercase;padding:0 12px;margin:0 0 10px}.side-link{display:flex;align-items:center;gap:12px;padding:11px 12px;color:#a5abc0;border-radius:9px;margin:3px 0;font-size:13px;transition:.18s}.side-link:hover,.side-link.active{background:#ffffff09;color:var(--text)}.side-link.active{box-shadow:inset 2px 0 var(--accent)}.side-icon{width:18px;text-align:center;color:#8790a8}.sidebar-note{position:absolute;left:20px;right:20px;bottom:24px;border-top:1px solid #ffffff12;padding-top:16px;color:#727b92;font-size:11px}.main{min-width:0;padding:34px clamp(22px,4vw,60px) 72px}.eyebrow{font:10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);align-items:center;gap:32px;padding:16px 0 32px}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.055em;margin:13px 0 17px;max-width:650px}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:600px;color:#a8aec1;font-size:15px;margin:0 0 22px}.hero-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.pill{font:10px var(--mono);padding:6px 9px;border:1px solid #ffffff18;border-radius:6px;color:#bdc2d2}.hero-visual{min-height:230px;position:relative;display:grid;place-items:center;overflow:hidden;border:1px solid #b493ff33;border-radius:16px;background:linear-gradient(140deg,#191a2c,#171725 52%,#18242a);box-shadow:0 26px 70px #0004}.orb{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 36% 33%,#e4d9ff 0 1%,#bf8dff 8%,#753ee4 32%,#3b267d 53%,transparent 70%);filter:drop-shadow(0 0 46px #9e69ff77);left:calc(50% - 110px);top:calc(50% - 110px)}.orbit{position:absolute;width:300px;height:100px;border:1px solid #b790ff55;border-radius:50%;transform:rotate(-28deg)}.orbit.two{width:335px;height:126px;transform:rotate(31deg);border-color:#7ce2ff44}.hero-orbit-label{position:absolute;font:10px var(--mono);color:#b4bdd0;background:#141726dd;border:1px solid #ffffff1c;padding:7px 9px;border-radius:7px}.hero-orbit-label.one{top:22px;left:20px}.hero-orbit-label.two{bottom:19px;right:20px}.hero-orbit-label b{color:var(--accent);font-weight:500}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:28px 0 14px}.section-head h2{margin:0;font-size:20px;letter-spacing:-.025em}.section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}.caption{font:10px var(--mono);color:#727b92}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:#111521c9;border:1px solid var(--line);border-radius:11px;padding:15px 17px}.stat-label{color:#929ab0;font-size:11px}.stat-value{font:22px var(--mono);letter-spacing:-.05em;margin-top:6px}.stat-foot{font:10px var(--mono);color:#687189;margin-top:6px}.demo-shell{background:#0e121d;border:1px solid #30364a;border-radius:14px;overflow:hidden;box-shadow:0 24px 80px #0003}.demo-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:#151a28;border-bottom:1px solid var(--line)}.demo-title{font-size:12px;font-weight:700;display:flex;align-items:center;gap:9px}.window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#596076}.window-dots i:first-child{background:#ff7c8b}.window-dots i:nth-child(2){background:#ffc56e}.window-dots i:nth-child(3){background:#8ce3b1}.demo-top-right{display:flex;gap:8px}.mode-button{border:1px solid #33394d;color:#9ca4b8;background:transparent;padding:6px 9px;border-radius:6px;font:10px var(--mono)}.mode-button.active{color:var(--accent);border-color:#c7ff6355;background:#c7ff630b}.demo-content{display:grid;grid-template-columns:minmax(270px,.82fr) minmax(0,1.18fr);min-height:470px}.form-panel{padding:21px;border-right:1px solid var(--line)}.output-panel{padding:21px;min-width:0}.panel-title{font-size:12px;font-weight:700;display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.form-grid{display:grid;gap:12px}.field label{display:flex;justify-content:space-between;color:#9da5ba;font-size:11px;margin-bottom:6px}.field label span{font:9px var(--mono);color:#616b83}.field select{width:100%;color:#e7e9ef;background:#171c2a;border:1px solid #30364a;border-radius:7px;padding:10px 11px;font:12px var(--mono);appearance:none;background-image:linear-gradient(45deg,transparent 50%,#8991a8 50%),linear-gradient(135deg,#8991a8 50%,transparent 50%);background-position:calc(100% - 14px) 15px,calc(100% - 10px) 15px;background-size:4px 4px;background-repeat:no-repeat}.toggle-row{display:flex;align-items:center;justify-content:space-between;padding:11px 0 2px;color:#c8ccda;font-size:11px}.toggle-row small{display:block;color:#737c92;font-size:10px;margin-top:2px}.switch{appearance:none;width:34px;height:19px;background:#343a4c;border-radius:99px;position:relative;transition:.2s;flex:none}.switch:checked{background:#95c746}.switch:before{content:"";position:absolute;width:13px;height:13px;background:#fff;border-radius:50%;top:3px;left:3px;transition:.2s}.switch:checked:before{left:18px}.primary-btn{width:100%;border:0;background:var(--accent);color:#11150b;padding:12px 14px;border-radius:8px;font-weight:800;font-size:12px;margin-top:17px;transition:.18s}.primary-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.helper{color:#687189;font-size:10px;margin-top:10px}.result-card{border:1px solid #2b3245;border-radius:10px;padding:14px;background:#131827;min-height:116px}.result-top{display:flex;align-items:center;justify-content:space-between}.decision{font:11px var(--mono);letter-spacing:.08em;color:var(--muted)}.decision.allow{color:var(--green)}.decision.deny{color:var(--red)}.result-message{color:#dfe2eb;font-size:12px;margin-top:7px}.result-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.tiny-chip{font:9px var(--mono);color:#929bb0;background:#ffffff08;border:1px solid #ffffff12;padding:5px 7px;border-radius:5px}.token-line{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid #ffffff12;color:#8891a8;font-size:10px}.token-line code{color:#b7c8a1;font:10px var(--mono);max-width:65%;overflow:hidden;text-overflow:ellipsis}.trace-head{display:flex;justify-content:space-between;align-items:center;margin:20px 0 9px;color:#aeb4c6;font-size:11px;font-weight:700}.trace-list{list-style:none;margin:0;padding:0;display:grid;gap:1px}.trace-item{display:grid;grid-template-columns:13px minmax(0,1fr) auto;gap:9px;align-items:start;padding:9px 8px;border-bottom:1px solid #ffffff0b}.trace-mark{width:7px;height:7px;border-radius:50%;background:#69748b;margin-top:5px}.trace-mark.allow,.trace-mark.healthy,.trace-mark.recovered{background:var(--green);box-shadow:0 0 8px #8ce3b155}.trace-mark.warn,.trace-mark.degraded{background:var(--amber)}.trace-mark.deny,.trace-mark.error{background:var(--red)}.trace-copy strong{display:block;font:10px var(--mono);color:#dfe2eb;font-weight:500}.trace-copy span{display:block;color:#7f889f;font-size:10px;margin-top:2px}.trace-ms{font:9px var(--mono);color:#737c93}.empty-trace{color:#737c93;border:1px dashed #30364a;padding:20px;border-radius:8px;text-align:center;font-size:11px}.callout{border-left:2px solid var(--pink);padding:9px 12px;color:#a9afc1;font-size:10px;background:#d992ff09;margin-top:13px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}.info-card{border:1px solid var(--line);background:#111521;border-radius:11px;padding:16px}.info-card h3{font-size:12px;margin:0 0 8px}.info-card p{color:#929ab0;font-size:11px;margin:0}.architecture{border:1px solid var(--line);background:linear-gradient(120deg,#111521,#111421);border-radius:12px;padding:20px;overflow:hidden}.arch-flow{display:grid;grid-template-columns:repeat(5,1fr);align-items:center;gap:22px}.arch-node{min-height:82px;border:1px solid #31384c;border-radius:9px;padding:12px;background:#151b2a;position:relative}.arch-node:not(:last-child):after{content:"›";position:absolute;right:-17px;top:25px;color:#6e7891;font-size:20px}.arch-node .node-label{font:9px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.arch-node strong{display:block;font-size:11px;margin:6px 0 3px}.arch-node small{display:block;color:#8089a0;font-size:9px}.arch-note{font-size:10px;color:#768098;margin:14px 0 0}.api-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:12px}.api-card{border:1px solid var(--line);border-radius:11px;padding:16px;background:#111521}.route{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #ffffff0c}.route:last-child{border:0}.method{font:9px var(--mono);color:#111;background:var(--green);padding:4px 6px;border-radius:4px}.method.get{background:var(--blue)}.route code{font:10px var(--mono);color:#e2e5ed}.route small{margin-left:auto;color:#778198;font-size:9px}.code-block{margin:0;background:#0a0d15;border:1px solid #252b3c;padding:13px;border-radius:8px;overflow:auto;color:#b5c2df;font:10px/1.7 var(--mono)}.code-pink{color:#e5a3ff}.code-green{color:#c7ff63}.events{display:grid;gap:7px}.event{display:grid;grid-template-columns:56px 9px minmax(0,1fr) auto;align-items:center;gap:9px;padding:10px 11px;background:#111521;border:1px solid #252b3c;border-radius:8px}.event-time{font:9px var(--mono);color:#707991}.event-dot{width:6px;height:6px;border-radius:50%;background:#75809a}.event-dot.allow{background:var(--green)}.event-dot.deny{background:var(--red)}.event-text{font-size:10px;color:#b9bfd0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.event-badge{font:8px var(--mono);color:#8791a8;border:1px solid #ffffff16;padding:3px 5px;border-radius:4px}.footer{display:flex;justify-content:space-between;gap:15px;margin-top:44px;padding-top:17px;border-top:1px solid #ffffff12;color:#717b92;font-size:10px}.toast{position:fixed;right:22px;bottom:22px;z-index:10;background:#171d2b;border:1px solid #454d64;color:#e8eaf1;padding:12px 15px;border-radius:9px;box-shadow:0 14px 40px #0007;max-width:360px;font-size:12px;opacity:0;transform:translateY(12px);transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}.subtle-link{color:var(--accent);border-bottom:1px solid #c7ff6355}.section-anchor{scroll-margin-top:90px}.disclaimer{color:#7c859b;font-size:10px;margin-top:10px}
-    @media(max-width:980px){.layout{grid-template-columns:64px minmax(0,1fr)}.sidebar{padding:22px 8px}.side-label,.side-link span:not(.side-icon),.sidebar-note{display:none}.side-link{justify-content:center;padding:12px}.side-icon{font-size:16px}.hero{grid-template-columns:1fr .8fr}.demo-content{grid-template-columns:1fr}.form-panel{border-right:0;border-bottom:1px solid var(--line)}.form-grid{grid-template-columns:1fr 1fr}.primary-btn{max-width:360px}.arch-flow{grid-template-columns:repeat(3,1fr)}.arch-node:nth-child(3):after{display:none}}
-    @media(max-width:680px){.topbar{padding:0 16px;height:60px}.portfolio-tag{display:none}.layout{display:block}.sidebar{height:auto;position:sticky;top:60px;z-index:4;width:100%;padding:6px 10px;background:#0b0d16ed;border-right:0;border-bottom:1px solid #ffffff12;display:flex;overflow:auto}.side-link{flex:none;padding:9px 11px;gap:7px;font-size:10px}.side-link span:not(.side-icon){display:inline}.side-icon{font-size:12px;width:auto}.main{padding:22px 15px 48px}.hero{grid-template-columns:1fr;padding:8px 0 16px;gap:22px}.hero h1{font-size:40px}.hero-visual{min-height:185px}.stats{grid-template-columns:1fr 1fr}.stat{padding:12px}.stat-value{font-size:18px}.demo-top{align-items:flex-start;gap:8px}.demo-top-right{flex-wrap:wrap;justify-content:flex-end}.form-panel,.output-panel{padding:15px}.form-grid{grid-template-columns:1fr}.two-col,.api-grid{grid-template-columns:1fr}.arch-flow{grid-template-columns:1fr;gap:10px}.arch-node{min-height:auto}.arch-node:not(:last-child):after{content:"⌄";right:50%;top:auto;bottom:-18px;z-index:1}.arch-node:nth-child(3):after{display:block}.footer{display:block}.footer span{display:block;margin:5px 0}.event{grid-template-columns:47px 8px minmax(0,1fr)}.event-badge{display:none}}
+  <title>StreamGuard: Playback Reliability Lab</title>  <style>
+/* Hallmark · v2.0.0 · redesign: full · shape: app screen · scope: app · genre: modern-minimal · theme: Console · console: graphite · brand: StreamGuard orange · job: evaluate playback requests · signature: live decision trace · system font: offline app controls */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R5 V4 · weakest: H, the old hero displaced the controls; compacted the introduction and elevated the request workbench */
+:root {
+  color-scheme: dark;
+  --bg: #131516; --panel: #1b1e20; --panel2: #222629; --deep: #101213;
+  --line: #353a3e; --line-strong: #596167; --muted: #a8b0b5; --text: #f0f2f3;
+  --accent: #ff6a21; --accent-hover: #ff874b; --accent-ink: #211007; --accent-soft: #37241b;
+  --green: #88d5a6; --green-soft: #1c3026; --red: #ff9992; --red-soft: #382220;
+  --blue: #9bc5e1; --amber: #edc082; --pink: var(--accent); --focus: #ffc28f;
+  --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px;
+  --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; --space-3xl: 64px;
+  --radius: 8px; --radius-control: 5px; --duration: 140ms; --ease: cubic-bezier(.2,.7,.2,1);
+}
+* { box-sizing: border-box; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: 140px; }
+body { overflow-x: clip; margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 var(--sans); }
+::selection { background: var(--accent-soft); color: var(--text); }
+* { scrollbar-color: var(--line-strong) var(--deep); scrollbar-width: thin; }
+a { color: inherit; text-decoration: none; text-underline-offset: 4px; }
+button, select, input { font: inherit; }
+button, select, .switch { cursor: pointer; }
+button { transition: background-color var(--duration) var(--ease), border-color var(--duration) var(--ease); }
+button:active, .hero-cta:active { transform: translateY(1px); }
+button:disabled { background: var(--panel2); color: var(--muted); cursor: wait; transform: none; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; }
+h1, h2, h3 { min-width: 0; overflow-wrap: break-word; text-wrap: balance; font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
+p { max-width: 70ch; }
+.app { max-width: 1440px; margin: 0 auto; }
+.topbar { min-height: 76px; padding: 0 var(--space-2xl); display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: var(--space-sm); font-size: 19px; font-weight: 650; letter-spacing: -.035em; }
+.brand-mark { display: grid; place-items: center; width: 30px; height: 32px; color: var(--accent); }
+.brand-mark svg { width: 30px; height: 30px; }
+.brand-sub { margin-left: var(--space-xs); font-size: 14px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.top-right { display: flex; align-items: center; gap: var(--space-md); font-size: 12px; color: var(--muted); }
+.portfolio-tag { padding-right: var(--space-md); border-right: 1px solid var(--line); }
+.mode-pill { color: var(--green); font-size: 12px; }
+.layout { min-width: 0; }
+.sidebar { position: sticky; top: 0; z-index: 5; display: flex; gap: var(--space-lg); align-items: center; padding: 0 var(--space-2xl); background: var(--bg); border-bottom: 1px solid var(--line); }
+.side-link { min-height: 54px; display: flex; align-items: center; color: var(--muted); font-size: 13px; border-bottom: 2px solid transparent; }
+.side-link:hover { color: var(--text); }
+.side-link.active { color: var(--text); border-color: var(--accent); }
+.sidebar-note { margin-left: auto; max-width: 205px; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.main { padding: 0 var(--space-2xl) var(--space-xl); min-width: 0; }
+.hero { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xl); padding: var(--space-xl) 0; }
+.hero h1 { margin: 0 0 var(--space-sm); font-size: 36px; }
+.hero p { margin: 0; color: var(--muted); font-size: 14px; max-width: 72ch; }
+.hero-cta { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; min-height: 44px; padding: 0 var(--space-md); border: 1px solid var(--line-strong); border-radius: var(--radius-control); background: var(--panel); color: var(--text); font-size: 13px; font-weight: 500; }
+.hero-cta:hover { background: var(--panel2); border-color: var(--muted); }
+.stats { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: var(--space-lg) 0; }
+.stat { min-width: 0; padding: 0 var(--space-lg); border-left: 1px solid var(--line); }
+.stat:first-child { padding-left: 0; border-left: 0; }
+.stat-label { color: var(--muted); font-size: 12px; }
+.stat-value { font: 30px/1.35 var(--mono); font-variant-numeric: tabular-nums; letter-spacing: -.04em; margin: var(--space-xs) 0; }
+.stat-foot { color: var(--muted); font-size: 12px; }
+.section-head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); margin: var(--space-xl) 0 var(--space-md); }
+.section-head h2 { margin: 0 0 var(--space-2xs); font-size: 21px; }
+.section-head p { margin: 0; color: var(--muted); font-size: 13px; }
+.section-note { color: var(--muted); font-size: 12px; display: block; margin-top: var(--space-2xs); }
+.demo-shell { border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.demo-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-sm) var(--space-lg); border-bottom: 1px solid var(--line); }
+.demo-title { font-size: 13px; font-weight: 500; }
+.demo-top-right { display: flex; gap: var(--space-2xs); }
+.mode-button { min-height: 40px; padding: 0 var(--space-sm); border: 1px solid var(--line); border-radius: var(--radius-control); background: transparent; color: var(--muted); font-size: 12px; }
+.mode-button:hover { background: var(--panel2); color: var(--text); border-color: var(--line-strong); }
+.mode-button.active { background: var(--accent-soft); color: var(--accent-hover); border-color: var(--accent); }
+.demo-content { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); }
+.form-panel, .output-panel { min-width: 0; padding: var(--space-lg); }
+.form-panel { border-right: 1px solid var(--line); }
+.output-panel { background: var(--deep); color: var(--text); border-radius: 0 0 var(--radius) 0; }
+.panel-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); font-size: 14px; font-weight: 500; margin-bottom: var(--space-lg); }
+.caption { font: 12px var(--sans); color: var(--muted); font-weight: 400; overflow-wrap: anywhere; }
+.panel-title .caption { text-align: right; }
+.quick-runs { margin-bottom: var(--space-lg); }
+.quick-runs-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); margin-bottom: var(--space-xs); font-size: 12px; }
+.quick-runs-heading strong { font-weight: 500; }
+.quick-runs-heading span { font-size: 12px; color: var(--muted); }
+.quick-run-buttons { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-xs); }
+.scenario-button { min-height: 44px; padding: var(--space-xs); border: 1px solid var(--line-strong); border-radius: var(--radius-control); background: var(--panel); color: var(--text); font-size: 12px; }
+.scenario-button:hover { background: var(--panel2); border-color: var(--muted); }
+.form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-md); }
+.field { min-width: 0; }
+.field label { display: block; margin-bottom: var(--space-xs); color: var(--muted); font-size: 12px; }
+.field select { width: 100%; min-height: 44px; border: 1px solid var(--line-strong); border-radius: var(--radius-control); padding: 0 var(--space-xs); background: var(--deep); color: var(--text); font-size: 12px; text-overflow: ellipsis; }
+.field select:hover { border-color: var(--muted); }
+.toggle-row { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-lg) 0; margin-top: var(--space-lg); border-top: 1px solid var(--line); font-size: 13px; }
+.toggle-row small { display: block; color: var(--muted); font-size: 12px; margin-top: var(--space-2xs); }
+.switch { appearance: none; flex-shrink: 0; width: 44px; height: 44px; margin: 0; position: relative; border-radius: var(--radius-control); background: transparent; }
+.switch::before { content: ""; position: absolute; width: 36px; height: 22px; top: 11px; left: 4px; border-radius: 12px; background: var(--line-strong); }
+.switch::after { content: ""; position: absolute; width: 16px; height: 16px; top: 14px; left: 7px; border-radius: 50%; background: var(--text); transition: transform var(--duration) var(--ease); }
+.switch:checked::before { background: var(--accent); }
+.switch:checked::after { transform: translateX(14px); background: var(--accent-ink); }
+.primary-btn { display: block; width: 100%; min-height: 46px; padding: var(--space-sm) var(--space-md); border: 0; border-radius: var(--radius-control); background: var(--accent); color: var(--accent-ink); font-size: 14px; font-weight: 650; }
+.primary-btn:hover { background: var(--accent-hover); }
+.helper { text-align: center; margin-top: var(--space-xs); font-size: 12px; color: var(--muted); }
+.result-card { padding-bottom: var(--space-lg); border-bottom: 1px solid var(--line); }
+.result-top { display: flex; justify-content: space-between; align-items: center; gap: var(--space-sm); }
+.decision { display: inline-flex; align-items: center; gap: var(--space-xs); font-size: 13px; font-weight: 500; color: var(--muted); }
+.decision.allow { color: var(--green); }
+.decision.deny { color: var(--red); }
+.decision.allow::before { content: "✓"; }
+.decision.deny::before { content: "×"; }
+.result-message { margin-top: var(--space-sm); font-size: 14px; line-height: 1.55; }
+.result-meta { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin-top: var(--space-md); }
+.tiny-chip { padding: var(--space-2xs) var(--space-xs); background: var(--panel2); border-radius: 3px; font-size: 12px; color: var(--muted); }
+.token-line { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); margin-top: var(--space-md); font-size: 12px; color: var(--muted); }
+.token-line code { max-width: 65%; text-align: right; overflow-wrap: anywhere; font: 12px var(--mono); color: var(--blue); }
+.trace-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); margin: var(--space-lg) 0 var(--space-xs); font-size: 13px; }
+.trace-list { list-style: none; margin: 0; padding: 0; counter-reset: trace; }
+.trace-item { display: grid; grid-template-columns: 20px minmax(0,1fr) auto; gap: var(--space-sm); align-items: start; padding: var(--space-sm) 0; border-bottom: 1px solid var(--line); }
+.trace-item:last-child { border-bottom: 0; }
+.trace-mark { counter-increment: trace; font: normal 12px/1.8 var(--mono); color: var(--muted); }
+.trace-mark::before { content: counter(trace, decimal-leading-zero); }
+.trace-mark.allow, .trace-mark.healthy, .trace-mark.recovered { color: var(--green); }
+.trace-mark.warn, .trace-mark.degraded { color: var(--amber); }
+.trace-mark.deny, .trace-mark.error { color: var(--red); }
+.trace-copy strong { display: block; font-size: 12px; font-weight: 500; }
+.trace-copy span { display: block; margin-top: var(--space-2xs); color: var(--muted); font-size: 12px; line-height: 1.5; }
+.trace-ms { font: 12px/1.8 var(--mono); color: var(--blue); white-space: nowrap; }
+.empty-trace { min-height: 180px; display: grid; place-content: center; padding: var(--space-xl); text-align: center; color: var(--muted); font-size: 12px; }
+.empty-trace::before { content: "No request trace yet"; color: var(--text); font-size: 15px; margin-bottom: var(--space-xs); }
+.callout { padding-top: var(--space-md); margin-top: var(--space-md); border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.disclaimer { margin-top: var(--space-sm); color: var(--muted); font-size: 12px; line-height: 1.6; }
+.architecture { border-top: 1px solid var(--line); padding-top: var(--space-lg); }
+.arch-flow { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); }
+.arch-node { min-width: 0; padding: 0 var(--space-md); border-left: 1px solid var(--line); }
+.arch-node:first-child { padding-left: 0; border-left: 0; }
+.node-label { color: var(--muted); font-size: 12px; }
+.arch-node strong { display: block; margin: var(--space-xs) 0; font-size: 14px; font-weight: 500; }
+.arch-node small { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.arch-note { color: var(--muted); font-size: 12px; max-width: 100%; margin: var(--space-lg) 0; }
+.two-col { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-xl); border-top: 1px solid var(--line); padding-top: var(--space-lg); }
+.info-card h3 { font-size: 14px; margin: 0 0 var(--space-xs); }
+.info-card p { color: var(--muted); font-size: 12px; margin: 0; }
+.api-grid { display: grid; grid-template-columns: minmax(0,.85fr) minmax(0,1.15fr); gap: var(--space-xl); padding-top: var(--space-xs); }
+.api-card { min-width: 0; }
+.route { display: flex; gap: var(--space-sm); align-items: center; min-height: 52px; padding: var(--space-sm) 0; border-bottom: 1px solid var(--line); }
+.method { width: 42px; font: 12px var(--mono); color: var(--accent-hover); flex-shrink: 0; }
+.method.get { color: var(--blue); }
+.route code { font: 12px var(--mono); overflow-wrap: anywhere; }
+.route small { margin-left: auto; color: var(--muted); font-size: 12px; text-align: right; }
+.code-block { max-width: 100%; margin: 0; padding: var(--space-md); background: var(--deep); color: var(--text); border: 1px solid var(--line); border-radius: var(--radius-control); white-space: pre-wrap; overflow-wrap: anywhere; font: 12px/1.8 var(--mono); }
+.code-pink { color: var(--blue); }
+.code-green { color: var(--green); }
+.events { border-top: 1px solid var(--line); }
+.event { min-width: 0; display: grid; grid-template-columns: 76px minmax(0,1fr) auto; align-items: baseline; gap: var(--space-md); padding: var(--space-md) 0; border-bottom: 1px solid var(--line); }
+.event-time { font: 12px var(--mono); color: var(--muted); }
+.event-dot { display: none; }
+.event-text { min-width: 0; color: var(--text); font-size: 12px; overflow-wrap: anywhere; }
+.event-badge { font: 12px var(--sans); color: var(--muted); white-space: nowrap; }
+.footer { display: flex; justify-content: space-between; gap: var(--space-md); margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 10; width: min(400px,calc(100% - 48px)); padding: var(--space-md); border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--panel2); color: var(--text); font-size: 13px; opacity: 0; transform: translateY(8px); transition: opacity var(--duration) var(--ease),transform var(--duration) var(--ease); pointer-events: none; }
+.toast.show { opacity: 1; transform: none; }
+@media(min-width:1600px) { .app { max-width: 1360px; } }
+@media(max-width:1000px) {
+  .topbar, .sidebar { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .main { padding-left: var(--space-lg); padding-right: var(--space-lg); }
+  .sidebar-note { display: none; }
+  .hero h1 { font-size: 30px; }
+  .hero p { max-width: 60ch; }
+  .demo-content { grid-template-columns: minmax(0,1fr) minmax(0,1fr); }
+  .form-panel, .output-panel { padding: var(--space-md); }
+  .quick-runs-heading span { display: none; }
+  .quick-run-buttons { gap: var(--space-2xs); }
+  .scenario-button { font-size: 12px; padding: var(--space-2xs); }
+  .panel-title { align-items: baseline; flex-wrap: wrap; }
+  .field select { font-size: 12px; }
+}
+@media(max-width:760px) {
+  html { scroll-padding-top: 80px; }
+  .topbar { min-height: 68px; padding: 0 var(--space-md); }
+  .brand { font-size: 17px; }
+  .brand-sub, .portfolio-tag { display: none; }
+  .sidebar { padding: 0 var(--space-md); gap: var(--space-lg); overflow-x: auto; }
+  .side-link { white-space: nowrap; min-height: 48px; font-size: 12px; }
+  .main { padding: 0 var(--space-md) var(--space-lg); }
+  .hero { align-items: flex-start; flex-direction: column; gap: var(--space-md); padding: var(--space-lg) 0; }
+  .hero h1 { font-size: 30px; max-width: 18ch; }
+  .hero p { font-size: 13px; }
+  .hero-cta { font-size: 12px; }
+  .stats { grid-template-columns: repeat(2,minmax(0,1fr)); padding: 0; }
+  .stat { padding: var(--space-md) 0; }
+  .stat:nth-child(2n) { padding-left: var(--space-md); }
+  .stat:nth-child(3) { border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .stat-value { font-size: 26px; }
+  .stat-foot { font-size: 12px; }
+  .section-head h2 { font-size: 20px; }
+  .demo-top { align-items: flex-start; flex-direction: column; padding: var(--space-md); gap: var(--space-sm); }
+  .demo-top-right { width: 100%; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .mode-button { min-height: 44px; }
+  .demo-content { grid-template-columns: minmax(0,1fr); }
+  .form-panel { border-right: 0; border-bottom: 1px solid var(--line); }
+  .output-panel { border-radius: 0 0 var(--radius) var(--radius); }
+  .scenario-button { font-size: 12px; }
+  .field select { font-size: 12px; }
+  .arch-flow { grid-template-columns: minmax(0,1fr); }
+  .arch-node, .arch-node:first-child { padding: var(--space-md) 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .arch-node strong { margin: var(--space-2xs) 0; }
+  .two-col, .api-grid { grid-template-columns: minmax(0,1fr); gap: var(--space-lg); }
+  .event { grid-template-columns: 60px minmax(0,1fr); gap: var(--space-sm); }
+  .event-badge { grid-column: 2; }
+  .footer { flex-direction: column; font-size: 12px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
   </style>
-  <style>
-    :root{color-scheme:dark;--bg:#111110;--panel:#1b1a18;--panel2:#242220;--line:#403c38;--muted:#c0bab4;--text:#f5f2ee;--accent:#ff6a21;--pink:#ff6a21;--red:#ff7774;--blue:#ff6a21;--amber:#f4bd62;--green:#66cf91;--sans:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    html{scroll-behavior:smooth}body{background:var(--bg);font-size:16px;line-height:1.6;color:var(--text)}
-    .topbar{background:rgb(20 19 18 / 96%);border-bottom-color:#ffffff20}.brand{letter-spacing:.08em}.brand-mark{color:var(--accent);border-color:#ff6a2170;box-shadow:none}.portfolio-tag,.mode-pill{font-size:12px;color:#e0d9d2;border-color:#ffffff28}.dot{box-shadow:none}
-    .layout{max-width:1680px}.sidebar{border-color:#ffffff20}.side-label{font-size:11px;color:#b8b0a9}.side-link{font-size:14px;color:#d4cec8;min-height:44px}.side-link:hover,.side-link.active{background:#ffffff0c;color:#fff}.side-link.active{box-shadow:inset 3px 0 var(--accent)}.side-icon{color:#d1a18a}.sidebar-note{color:#b7aea6;font-size:12px;border-color:#ffffff20}
-    .main{padding-top:38px}.hero{padding-top:10px;gap:38px}.eyebrow{font-size:12px;color:var(--accent);letter-spacing:.1em}.hero h1{font-size:clamp(36px,4.5vw,56px);line-height:1.08;letter-spacing:-.04em}.hero h1 em{color:var(--accent)}.hero p{max-width:58ch;color:#d2ccc6;font-size:17px;line-height:1.6}.hero-visual{border-color:#ff6a2142;border-radius:18px;background:radial-gradient(ellipse at 50% 45%,#2d1c14,#1a1917 68%);box-shadow:none}.orb{background:radial-gradient(circle at 36% 33%,#fff0e3 0 1%,#ff995e 8%,#ef641f 32%,#743316 54%,transparent 70%);filter:none}.orbit{border-color:#ff9a675c}.orbit.two{border-color:#ff6a2138}.hero-orbit-label{display:none}
-    .hero-meta{display:none}.hero-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;margin-top:2px;border-radius:9px;background:var(--accent);color:#24130b;font-size:15px;font-weight:800}.hero-cta:hover{filter:brightness(1.06)}
-    .stats{gap:12px}.stat{background:var(--panel);border-color:var(--line);border-radius:12px;padding:17px}.stat-label{font-size:13px;color:#d2ccc6}.stat-value{font-size:24px;color:#fff}.stat-foot{font-size:11px;color:#b4aaa1}
-    .section-head{display:block;margin:42px 0 16px}.section-head h2{font-size:24px;letter-spacing:-.02em}.section-head p{font-size:15px;color:#c9c2bb;line-height:1.5}.section-note{display:inline-block;margin-top:8px;color:#bdb4ad;font-size:12px}
-    .demo-shell,.architecture{background:var(--panel);border-color:var(--line);border-radius:14px;box-shadow:none}.demo-top{padding:14px 18px;background:#242220;border-color:var(--line)}.demo-title{font-size:15px}.window-dots{display:none}.demo-top-right{gap:8px}.mode-button{min-height:42px;padding:8px 12px;border-color:#514b45;color:#e1dad3;border-radius:8px;font:13px var(--sans);font-weight:650}.mode-button.active{color:#ff9b68;border-color:#ff6a21;background:#ff6a2118}
-    .demo-content{min-height:0}.form-panel,.output-panel{padding:22px}.form-panel{border-color:var(--line)}.panel-title{font-size:15px;margin-bottom:15px}.caption{font:12px var(--sans);color:#c1b8af}.form-grid{gap:14px}.field label{font-size:14px;color:#f0ebe6}.field label span{display:none}.field select{min-height:48px;padding:11px 14px;color:#fff;background-color:#242220;border-color:#57514b;border-radius:9px;font:14px var(--sans)}.field select option{background:#242220;color:#fff}.toggle-row{padding:14px 0 4px;font-size:14px;color:#f0ebe6}.toggle-row small{font-size:12px;color:#c3bab2}.switch{width:42px;height:24px;background:#514b45}.switch:before{width:18px;height:18px;top:3px;left:3px}.switch:checked{background:var(--accent)}.switch:checked:before{left:21px}
-    .primary-btn{min-height:50px;margin-top:18px;background:var(--accent);color:#24130b;border-radius:9px;font-size:15px}.primary-btn:hover{filter:brightness(1.06)}.helper,.disclaimer{font-size:12px;line-height:1.55;color:#c0b7ae}.result-card{background:#242220;border-color:#514b45;border-radius:12px;padding:17px}.decision{font-size:13px}.decision.allow{color:#79dda0}.decision.deny{color:#ff8580}.result-message{color:#f0ebe6;font-size:15px;line-height:1.55}.tiny-chip{font:12px var(--sans);color:#e7dfd8;background:#ffffff0b;border-color:#ffffff25;border-radius:6px;padding:5px 9px}.token-line{color:#c6bdb5;font-size:12px}.token-line code{color:#f3a77e;font-size:12px}.trace-head{font-size:14px;color:#f0ebe6}.trace-item{grid-template-columns:14px minmax(0,1fr) auto;padding:11px 8px;border-color:#ffffff18}.trace-copy strong{font:13px var(--sans);font-weight:700;color:#f4eee8}.trace-copy span{font-size:13px;line-height:1.5;color:#c5bcb3}.trace-ms{font-size:12px;color:#c5bcb3}.trace-mark.allow,.trace-mark.healthy,.trace-mark.recovered{box-shadow:none}.empty-trace{border-color:#625a53;color:#d3cbc4;font-size:13px}.callout{border-left:3px solid var(--accent);color:#e0d8d0;background:#ff6a2114;font-size:13px;line-height:1.5;margin-top:16px}.quick-runs{margin:0 0 18px;padding:14px;border:1px solid var(--line);border-radius:11px;background:#211f1d}.quick-runs-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;color:#f4eee8;font-size:14px}.quick-runs-heading span{color:#c2b8ae;font-size:12px}.quick-run-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.scenario-button{min-height:44px;padding:9px 11px;border:1px solid #61574f;border-radius:8px;background:#2b2724;color:#f4eee8;font:600 13px var(--sans);text-align:center}.scenario-button:hover{border-color:var(--accent);background:#ff6a2116}.scenario-button:first-child{border-color:#ff6a2199;color:#ffad83}.api-grid{gap:16px}.api-card,.info-card{background:var(--panel);border-color:var(--line);border-radius:12px;padding:18px}.info-card h3{font-size:15px}.info-card p{font-size:14px;line-height:1.6;color:#cbc3bb}.arch-flow{gap:18px}.arch-node{background:#242220;border-color:#514b45;border-radius:10px;padding:14px}.arch-node:not(:last-child):after{color:var(--accent)}.arch-node .node-label{font:12px var(--sans);font-weight:700;color:var(--accent);letter-spacing:.04em}.arch-node strong{font-size:14px}.arch-node small{font-size:12px;line-height:1.45;color:#c4bbb2}.arch-note{font-size:13px;line-height:1.55;color:#c6bdb5}.route{padding:12px 0;border-color:#ffffff20}.method{font:11px var(--mono);background:var(--accent);color:#24130b}.method.get{background:#47413b;color:#fff}.route code{font-size:13px;color:#f5efe9}.route small{font-size:12px;color:#c2b9b0}.code-block{background:#151413;border-color:#4a433d;color:#f0c2a7;font:12px/1.75 var(--mono)}.code-pink,.code-green{color:#ff9d68}.events{gap:8px}.event{grid-template-columns:64px 9px minmax(0,1fr) auto;gap:10px;padding:12px;background:var(--panel);border-color:var(--line);border-radius:9px}.event-time,.event-badge{font-size:11px;color:#c3bab2}.event-text{font-size:13px;color:#f0eae4}.footer{border-color:#ffffff20;color:#c2b9b0;font-size:12px}.toast{background:#282421;border-color:#65574e;color:#fff;font-size:14px}.subtle-link{color:#ff9d68;border-color:#ff6a2180}
-    button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ff9b68;outline-offset:3px}
-    @media(max-width:980px){.main{padding-top:28px}.hero{gap:22px}.demo-content{grid-template-columns:1fr}.form-panel{border-bottom:1px solid var(--line)}.arch-flow{gap:16px}}
-    @media(max-width:680px){.topbar{height:60px;padding:0 14px}.brand{font-size:12px}.portfolio-tag{display:none}.sidebar{top:60px;background:#171615;width:100%;padding:6px 8px}.side-link{font-size:12px;min-height:42px}.main{padding:22px 15px 48px}.hero{grid-template-columns:1fr;gap:18px}.hero h1{font-size:clamp(36px,10vw,46px);max-width:14ch}.hero p{font-size:16px}.hero-visual{min-height:160px}.stats{grid-template-columns:1fr 1fr;gap:8px}.stat{padding:12px}.stat-label{font-size:12px}.stat-value{font-size:20px}.stat-foot{font-size:10px}.section-head{margin-top:34px}.section-head h2{font-size:21px}.demo-top{align-items:flex-start;flex-direction:column}.demo-top-right{width:100%;display:grid;grid-template-columns:1fr 1fr}.mode-button{white-space:nowrap}.form-panel,.output-panel{padding:15px}.form-grid{grid-template-columns:1fr}.quick-runs-heading{align-items:flex-start;flex-direction:column;gap:2px}.quick-run-buttons{grid-template-columns:1fr}.scenario-button{text-align:left}.two-col,.api-grid{grid-template-columns:1fr}.arch-flow{grid-template-columns:1fr;gap:10px}.arch-node{min-height:auto}.arch-node:not(:last-child):after{content:"⌄";right:50%;top:auto;bottom:-18px;z-index:1}.arch-node:nth-child(3):after{display:block}.footer{display:block}.footer span{display:block;margin:5px 0}.event{grid-template-columns:50px 8px minmax(0,1fr)}.event-badge{display:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-  </style>
-  <style>.scenario-button{font-size:12px;padding:8px 6px;white-space:nowrap}</style>
 </head>
 <body>
 <div class="app">
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="StreamGuard home"><span class="brand-mark">S</span><span>STREAMGUARD <span style="color:#737c92;font-weight:500">/ LAB</span></span></a>
-    <div class="top-right"><span class="portfolio-tag">PLAYBACK SIMULATOR</span><span class="mode-pill"><i class="dot"></i><span id="health-label">DEMO READY</span></span></div>
+    <a class="brand" href="#top" aria-label="StreamGuard home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3 27 7v9c0 6-6 10-11 13C11 26 5 22 5 16V7L16 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m13 10 8 6-8 6V10Z" fill="currentColor"/></svg></span><span>StreamGuard<span class="brand-sub">Playback lab</span></span></a>
+    <div class="top-right"><span class="portfolio-tag">Playback simulator</span><span class="mode-pill"><span id="health-label">Demo ready</span></span></div>
   </header>
   <div class="layout" id="top">
     <nav class="sidebar" aria-label="Page sections">
-      <div class="side-label">Workspace</div>
-      <a class="side-link active" href="#overview"><span class="side-icon">◈</span><span>Overview</span></a>
-      <a class="side-link" href="#lab"><span class="side-icon">▷</span><span>Playback lab</span></a>
-      <a class="side-link" href="#architecture"><span class="side-icon">⌘</span><span>Architecture</span></a>
-      <a class="side-link" href="#api"><span class="side-icon">{ }</span><span>API surface</span></a>
-      <a class="side-link" href="#events"><span class="side-icon">⌁</span><span>Event stream</span></a>
+      <a class="side-link active" href="#overview"><span>Overview</span></a>
+      <a class="side-link" href="#lab"><span>Playback lab</span></a>
+      <a class="side-link" href="#architecture"><span>Architecture</span></a>
+      <a class="side-link" href="#api"><span>API surface</span></a>
+      <a class="side-link" href="#events"><span>Event stream</span></a>
       <div class="sidebar-note">A small systems project about the moment a viewer presses play.</div>
     </nav>
     <main class="main">
-      <section class="hero section-anchor" id="overview">
+      <section class="hero section-anchor" id="overview" aria-label="Playback request simulator">
         <div>
-          <div class="eyebrow">Playback request simulator</div>
-          <h1>Every second before <em>play</em> matters.</h1>
+          <h1>Every second before play matters.</h1>
           <p>Check access, regional rights, and delivery health. Then watch how a playback request recovers from an edge failure.</p>
-          <a class="hero-cta" href="#lab">Try a playback request</a>
         </div>
-        <div class="hero-visual" aria-label="Abstract glowing playback signal illustration">
-          <div class="orbit"></div><div class="orbit two"></div><div class="orb"></div>
-        </div>
+        <a class="hero-cta" href="#lab">Try a playback request</a>
       </section>
       <div class="stats" aria-label="Demo metrics">
-        <div class="stat"><div class="stat-label">Sessions evaluated</div><div class="stat-value" id="metric-requests">0</div><div class="stat-foot">THIS DEMO RUN</div></div>
-        <div class="stat"><div class="stat-label">Access granted</div><div class="stat-value" id="metric-allowed">0</div><div class="stat-foot">ENTITLEMENT + RIGHTS OK</div></div>
-        <div class="stat"><div class="stat-label">P95 startup path</div><div class="stat-value" id="metric-p95">No data</div><div class="stat-foot">SIMULATED EDGE LATENCY</div></div>
-        <div class="stat"><div class="stat-label">Edge recoveries</div><div class="stat-value" id="metric-failovers">0</div><div class="stat-foot">SYNTHETIC FAILURE INJECTIONS</div></div>
+        <div class="stat"><div class="stat-label">Sessions evaluated</div><div class="stat-value" id="metric-requests">0</div><div class="stat-foot">This demo run</div></div>
+        <div class="stat"><div class="stat-label">Access granted</div><div class="stat-value" id="metric-allowed">0</div><div class="stat-foot">Entitlement + rights checked</div></div>
+        <div class="stat"><div class="stat-label">P95 startup path</div><div class="stat-value" id="metric-p95">No data</div><div class="stat-foot">Simulated edge latency</div></div>
+        <div class="stat"><div class="stat-label">Edge recoveries</div><div class="stat-value" id="metric-failovers">0</div><div class="stat-foot">Synthetic failure injections</div></div>
       </div>
 
       <section class="section-anchor" id="lab">
         <div class="section-head"><div><h2>Playback session lab</h2><p>Choose a scenario or adjust the request fields, then run the check.</p><span class="section-note">Examples use fictional data and run in your browser.</span></div></div>
         <div class="demo-shell">
-          <div class="demo-top"><div class="demo-title">Session controls</div><div class="demo-top-right"><button class="mode-button active" id="mode-browser" type="button">Browser demo</button><button class="mode-button" id="mode-api" type="button">Local TypeScript API</button></div></div>
+          <div class="demo-top"><div class="demo-title">Session controls</div><div class="demo-top-right"><button class="mode-button active" id="mode-browser" type="button" aria-pressed="true">Browser demo</button><button class="mode-button" id="mode-api" type="button" aria-pressed="false">Local TypeScript API</button></div></div>
           <div class="demo-content">
             <div class="form-panel">
               <div class="panel-title">Playback request <span class="caption">POST /api/playback-sessions</span></div>
@@ -94,14 +275,14 @@
               <div class="helper" id="mode-helper">The browser demo makes no network requests.</div>
             </div>
             <div class="output-panel">
-              <div class="panel-title">Playback result <span class="caption" id="trace-id">WAITING FOR REQUEST</span></div>
+              <div class="panel-title">Playback result <span class="caption" id="trace-id">Waiting for request</span></div>
               <div class="result-card" id="result-card" aria-live="polite">
-                <div class="result-top"><span class="decision" id="decision">NOT RUN YET</span><span class="caption" id="result-time">Not run</span></div>
+                <div class="result-top"><span class="decision" id="decision">Not run yet</span><span class="caption" id="result-time">Not run</span></div>
                 <div class="result-message" id="result-message">Choose a scenario or set the request fields, then run the check.</div>
                 <div class="result-meta" id="result-meta"><span class="tiny-chip">The decision trace will appear here.</span></div>
                 <div class="token-line"><span>Demo grant</span><code id="token-info">Not issued</code></div>
               </div>
-              <div class="trace-head"><span>Request path</span><span class="caption" id="trace-count">0 CHECKS</span></div>
+              <div class="trace-head"><span>Request path</span><span class="caption" id="trace-count">0 checks</span></div>
               <ol class="trace-list" id="trace-list"><li class="empty-trace">The trace is generated from the result of each request.</li></ol>
               <div class="callout">DRM is only a demo policy check. This project does not stream video or connect to a real license service.</div>
             </div>
@@ -122,7 +303,7 @@
           </div>
           <p class="arch-note">For a production system, replace the in-memory demo catalogs and counters with owned identity, rights, and telemetry services; use key rotation and a managed signing key; keep the player and license service boundaries explicit.</p>
         </div>
-        <div class="two-col" style="margin-top:12px">
+        <div class="two-col" >
           <div class="info-card"><h3>Security boundary</h3><p>The API issues only a short-lived demo session grant after policy checks. There is no DRM license server, real playback URL, personal data, or production key material.</p></div>
           <div class="info-card"><h3>Reliability exercise</h3><p>Inject a preferred-edge failure and follow the recovery path. The request keeps its access decision while the router picks another healthy edge and exposes the added latency.</p></div>
         </div>
@@ -149,10 +330,10 @@
 
       <section class="section-anchor" id="events">
         <div class="section-head"><div><h2>Recent events</h2><p>Requests run in this browser session.</p></div><button class="mode-button" id="clear-events" type="button">Clear events</button></div>
-        <div class="events" id="events-list"><div class="event"><span class="event-time">JUST NOW</span><i class="event-dot"></i><span class="event-text">Playback lab is ready. Run a request to create the first trace.</span><span class="event-badge">SYSTEM</span></div></div>
+        <div class="events" id="events-list"><div class="event"><span class="event-time">Just now</span><i class="event-dot"></i><span class="event-text">Playback lab is ready. Run a request to create the first trace.</span><span class="event-badge">System</span></div></div>
       </section>
 
-      <footer class="footer"><span>Built by Nishanth Reddy Gantla · independent portfolio project</span><span>Exploring secure and reliable video playback systems</span></footer>
+      <footer class="footer"><span>Built by Nishanth Reddy Gantla, independent portfolio project</span><span>Exploring secure and reliable video playback systems</span></footer>
     </main>
   </div>
 </div>
@@ -184,12 +365,12 @@
   function addEvent(status, text, latency, id) {
     state.events.unshift({ time: clock(), status, text, latency, id });
     state.events = state.events.slice(0, 9);
-    $('events-list').innerHTML = state.events.length ? state.events.map(e => `<div class="event"><span class="event-time">${e.time}</span><i class="event-dot ${e.status === 'ALLOW' ? 'allow' : e.status === 'DENY' ? 'deny' : ''}"></i><span class="event-text">${e.text}</span><span class="event-badge">${e.latency} ms - ${e.id.slice(0, 8)}</span></div>`).join('') : '<div class="event"><span class="event-time">No time</span><i class="event-dot"></i><span class="event-text">No events yet. Run a request.</span><span class="event-badge">EMPTY</span></div>';
+    $('events-list').innerHTML = state.events.length ? state.events.map(e => `<div class="event"><span class="event-time">${e.time}</span><i class="event-dot ${e.status === 'ALLOW' ? 'allow' : e.status === 'DENY' ? 'deny' : ''}"></i><span class="event-text">${e.text}</span><span class="event-badge">${e.latency} ms - ${e.id.slice(0, 8)}</span></div>`).join('') : '<div class="event"><span class="event-time">No time</span><i class="event-dot"></i><span class="event-text">No events yet. Run a request.</span><span class="event-badge">Empty</span></div>';
   }
 
   function renderResult(r) {
     const allowed = r.decision === 'ALLOW';
-    $('decision').textContent = allowed ? 'ACCESS GRANTED' : 'ACCESS DENIED';
+    $('decision').textContent = allowed ? 'Access granted' : 'Access denied';
     $('decision').className = `decision ${allowed ? 'allow' : 'deny'}`;
     $('result-time').textContent = r.created_at ? new Date(r.created_at).toLocaleTimeString([], { hour12: false }) : clock();
     $('result-message').textContent = r.message;
@@ -198,11 +379,11 @@
     if (r.reason_code) meta.push(`<span class="tiny-chip">${r.reason_code}</span>`);
     if (r.selected_edge) meta.push(`<span class="tiny-chip">${readable(r.selected_edge)}</span>`);
     if (Number.isFinite(r.latency_ms)) meta.push(`<span class="tiny-chip">${r.latency_ms} ms estimated</span>`);
-    if (r.failover) meta.push('<span class="tiny-chip" style="color:var(--amber)">FAILOVER RECOVERED</span>');
-    if (!meta.length) meta.push('<span class="tiny-chip">POLICY DECISION</span>');
+    if (r.failover) meta.push('<span class="tiny-chip" style="color:var(--amber)">Failover recovered</span>');
+    if (!meta.length) meta.push('<span class="tiny-chip">Policy decision</span>');
     $('result-meta').innerHTML = meta.join('');
     $('token-info').textContent = r.token_preview || (r.token_status ? `grant ${r.token_status}` : 'not issued');
-    $('trace-count').textContent = `${(r.trace || []).length} CHECKS`;
+    $('trace-count').textContent = `${(r.trace || []).length} checks`;
     $('trace-list').innerHTML = (r.trace || []).map(t => `<li class="trace-item"><i class="trace-mark ${String(t.status).toLowerCase()}"></i><div class="trace-copy"><strong>${readable(t.name)}: ${t.status}</strong><span>${t.detail}</span></div><span class="trace-ms">${t.latency_ms} ms</span></li>`).join('') || '<li class="empty-trace">No trace returned.</li>';
     addEvent(r.decision, `${r.decision === 'ALLOW' ? 'Session granted' : 'Request denied'}: ${r.message}`, r.latency_ms || 0, r.session_id || 'local');
   }
@@ -236,7 +417,7 @@
       member_id: $('member').value, asset_id: $('asset').value, region: $('region').value, drm: $('drm').value,
       preferred_edge: $('edge').value, latency_profile: $('latency').value, simulate_edge_failure: $('failover').checked
     };
-    const button = $('start-session'); button.disabled = true; button.textContent = 'Checking request...';
+    const button = $('start-session'); button.disabled = true; button.setAttribute('aria-busy', 'true'); button.textContent = 'Checking request...';
     try {
       let result;
       if (state.mode === 'api') {
@@ -251,7 +432,7 @@
       renderResult(result);
       if (state.mode === 'api') await refreshMetrics(); else updateMetrics();
       } catch (error) { showToast(`Could not reach the TypeScript API: ${error.message}. Start it with the README instructions.`); }
-    finally { button.disabled = false; button.textContent = 'Run playback check'; }
+    finally { button.disabled = false; button.removeAttribute('aria-busy'); button.textContent = 'Run playback check'; }
   }
 
   async function refreshMetrics() {
@@ -259,20 +440,22 @@
       const response = await fetch('/api/metrics');
       if (!response.ok) throw new Error('API unavailable');
       const data = await response.json(); updateMetrics(data);
-      $('health-label').textContent = 'API CONNECTED';
-    } catch (_) { $('health-label').textContent = 'DEMO READY'; }
+      $('health-label').textContent = 'API connected';
+    } catch (_) { $('health-label').textContent = 'Demo ready'; }
   }
 
   async function setMode(mode) {
     state.mode = mode;
     $('mode-browser').classList.toggle('active', mode === 'browser');
     $('mode-api').classList.toggle('active', mode === 'api');
+    $('mode-browser').setAttribute('aria-pressed', String(mode === 'browser'));
+    $('mode-api').setAttribute('aria-pressed', String(mode === 'api'));
     $('mode-helper').textContent = mode === 'browser' ? 'The browser demo makes no network requests.' : 'Sends requests to the local TypeScript API. Start the Node.js server first.';
     $('api-disclaimer').textContent = mode === 'browser' ? 'Browser mode is an in-memory simulator. Start the TypeScript server to exercise the HTTP API and HMAC-signed demo grant.' : 'API mode uses a local TypeScript service and HMAC-signed demo grant. The hosted portfolio is browser-only; run the repository locally for API mode.';
     if (mode === 'api') {
-      try { const response = await fetch('/api/health'); if (!response.ok) throw new Error(); $('health-label').textContent = 'API CONNECTED'; await refreshMetrics(); }
-      catch (_) { $('health-label').textContent = 'API NOT RUNNING'; showToast('TypeScript API not found on this origin. Run the project locally, then select TypeScript API.'); }
-    } else $('health-label').textContent = 'DEMO READY';
+      try { const response = await fetch('/api/health'); if (!response.ok) throw new Error(); $('health-label').textContent = 'API connected'; await refreshMetrics(); }
+      catch (_) { $('health-label').textContent = 'API not running'; showToast('TypeScript API not found on this origin. Run the project locally, then select TypeScript API.'); }
+    } else $('health-label').textContent = 'Demo ready';
   }
 
   function runScenario(memberId, simulateFailure) {
@@ -292,7 +475,7 @@
   $('start-session').addEventListener('click', submit);
   $('mode-browser').addEventListener('click', () => setMode('browser'));
   $('mode-api').addEventListener('click', () => setMode('api'));
-  $('clear-events').addEventListener('click', () => { state.events = []; $('events-list').innerHTML = '<div class="event"><span class="event-time">No time</span><i class="event-dot"></i><span class="event-text">Event list cleared.</span><span class="event-badge">SYSTEM</span></div>'; });
+  $('clear-events').addEventListener('click', () => { state.events = []; $('events-list').innerHTML = '<div class="event"><span class="event-time">No time</span><i class="event-dot"></i><span class="event-text">Event list cleared.</span><span class="event-badge">System</span></div>'; });
   document.querySelectorAll('.side-link').forEach(link => link.addEventListener('click', () => { document.querySelectorAll('.side-link').forEach(el => el.classList.remove('active')); link.classList.add('active'); }));
   if (new URLSearchParams(location.search).get('mode') === 'api') setMode('api');
   updateMetrics();
